@@ -20,7 +20,8 @@ try {
       followers = followers.concat(res.data.user.edge_followed_by.edges.map(({node}) => {
         return {
           username: node.username,
-          full_name: node.full_name
+          full_name: node.full_name,
+          pic_url: node.profile_pic_url
         }
       }))
     })
@@ -42,7 +43,8 @@ try {
       followings = followings.concat(res.data.user.edge_follow.edges.map(({node}) => {
         return {
           username: node.username,
-          full_name: node.full_name
+          full_name: node.full_name,
+          pic_url: node.profile_pic_url
         }
       }))
     })
